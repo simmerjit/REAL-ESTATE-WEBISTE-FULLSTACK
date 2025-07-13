@@ -21,8 +21,8 @@ const PropertyModal = () => {
     const fetchProperty = async () => {
       try {
         const endpoint = isRent
-          ? `http://localhost:4000/api/rents/${id}`
-          : `http://localhost:4000/api/properties/${id}`;
+          ? `https://real-estate-webiste-fullstack.onrender.com/${id}`
+          : `https://real-estate-webiste-fullstack.onrender.com/${id}`;
 
         const res = await fetch(endpoint);
         const data = await res.json();
