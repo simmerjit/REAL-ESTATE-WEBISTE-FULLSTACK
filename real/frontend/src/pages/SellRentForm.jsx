@@ -22,14 +22,14 @@ const SellRentForm = () => {
   e.preventDefault();
 
   try {
-    const response = await fetch(`http://localhost:4000/${mode}/upload`, {
+    const response = await fetch(`https://real-estate-webiste-fullstack.onrender.com/${mode}/upload`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(formData),
     });
-    console.log(`POSTing to: http://localhost:4000/${mode}/upload`);
+    console.log(`POSTing to: https://real-estate-webiste-fullstack.onrender.com/${mode}/upload`);
 
     const data = await response.json();
     console.log("✅ Property posted:", data);
