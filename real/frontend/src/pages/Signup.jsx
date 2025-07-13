@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import signimg from '../images/signimg.png';
-import '../styles/signin.css';
+import '../styles/Signup.css';
 import 'animate.css';
 import { useNavigate } from 'react-router-dom';
 
