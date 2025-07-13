@@ -15,7 +15,7 @@ import Agents from "./db/agent.js";
 import connectDB from "./db/config.js";
 import nodemailer from "nodemailer"; // ✅ Add nodemailer import
 // import chatRoute from "./routes/chat.js";
-import path from "path";
+
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -24,7 +24,7 @@ app.use(cors());
 app.use(express.json());
 
 connectDB(); 
-const _dirname = path.resolve();
+
 
 
 app.post("/api/chat", async (req, res) => {
@@ -392,12 +392,6 @@ app.post('/rent/upload', async (req, res) => {
   }
 });
 
-if(process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(_dirname, 'frontend/dist')));
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(_dirname, 'frontend', 'dist', 'index.html'));
-  });
-} 
 
 app.listen(port, () => {
   
