@@ -39,7 +39,7 @@ const Rent = () => {
         setLoading(true);
          setError(null);
          try {
-            const response = await fetch('http://localhost:4000/rent')
+            const response = await fetch('https://real-estate-webiste-fullstack.onrender.com/rent')
              if (!response.ok) throw new Error('Failed to fetch properties');
              const data= await response.json()
              const filtered = searchQuery ? 
@@ -68,7 +68,7 @@ const Rent = () => {
             setLoading(true);
             setError(null);
             try {
-                const response = await fetch('http://localhost:4000/rent')
+                const response = await fetch('https://real-estate-webiste-fullstack.onrender.com/rent')
                 if (!response.ok) throw new Error('Failed to fetch all properties');
                 const data = await response.json()
                 setProperties(data)
@@ -89,7 +89,7 @@ const Rent = () => {
             setLoading(true);
             const encoded = encodeURIComponent(searchQuery);
             try {
-                const res = await axios.get(`/api/geocode?q=${encoded}`);
+                const res = await axios.get(`https://real-estate-webiste-fullstack.onrender.com/api/geocode?q=${encoded}`);
 
                 if (res.data.length > 0) {
                     console.log("Geocode API Response:", res.data);
