@@ -31,7 +31,7 @@ const Search = () => {
     const encoded = encodeURIComponent(searchInput);
 
     try {
-      const res = await axios.get(`/api/geocode?q=${encoded}`);
+      const res = await axios.get(`https://real-estate-webiste-fullstack.onrender.com/api/geocode?q=${encoded}`);
 
       if (res.data.length > 0) {
         console.log('Geocode API Response:', res.data);
@@ -60,7 +60,7 @@ const Search = () => {
       setError(null);
 
       try {
-        const response = await fetch(`http://localhost:4000/api/properties?search=${searchText}`);
+        const response = await fetch(`https://real-estate-webiste-fullstack.onrender.com/api/properties?search=${searchText}`);
         if (!response.ok) throw new Error('Failed to fetch properties');
         const data = await response.json();
 
@@ -92,7 +92,7 @@ const Search = () => {
       setError(null);
 
       try {
-        const response = await fetch(`http://localhost:4000/api/properties?search=${searchInput}`);
+        const response = await fetch(`https://real-estate-webiste-fullstack.onrender.com/api/properties?search=${searchInput}`);
         if (!response.ok) throw new Error('Failed to fetch properties');
         const data = await response.json();
 
