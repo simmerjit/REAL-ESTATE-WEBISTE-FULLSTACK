@@ -40,7 +40,7 @@ const Buy = () => {
       setError(null);
       try {
         const response = await fetch(
-          `http://localhost:4000/api/properties?search=${searchQuery}`
+          `https://real-estate-webiste-fullstack.onrender.com/api/properties?search=${searchQuery}`
         );
         if (!response.ok) throw new Error('Failed to fetch properties');
         const data = await response.json();
@@ -67,7 +67,7 @@ const Buy = () => {
       setLoading(true);
       setError(null);
       try {
-        const response = await fetch('http://localhost:4000/api/properties');
+        const response = await fetch('https://real-estate-webiste-fullstack.onrender.com/api/properties');
         if (!response.ok) throw new Error('Failed to fetch all properties');
         const data = await response.json();
         setProperties(data);
