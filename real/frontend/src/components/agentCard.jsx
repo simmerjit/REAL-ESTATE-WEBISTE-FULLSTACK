@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/agentCard.css';
+import '../styles/AgentCard.css';
 import 'animate.css';
 import { useNavigate } from 'react-router-dom';
 
