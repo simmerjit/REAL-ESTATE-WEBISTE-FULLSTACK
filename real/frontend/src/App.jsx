@@ -5,20 +5,21 @@ import './App.css'
 import {BrowserRouter, Routes, Route , useLocation} from 'react-router-dom'
 import Nav from './pages/Nav'
 import Home from './pages/Home'
-import Signin from './pages/signin'
+import Signin from './pages/Signin'
 import Signup from './pages/Signup'
-import Buy from './pages/buy'
+import Buy from './pages/Buy'
 import Search from './pages/Search'
-import Rent from './pages/rent'
+import Rent from './pages/Rent'
 import Help from './pages/Help'
-import PropertyModal from './components/PropertyModal';
+import PropertyModal from './components/PropertyModal'
 import Sell from './pages/Sell'
 import HomeLoans from './pages/HomeLoans'
 import ZillowPartners from './pages/ZillowPartners'
 import Rentals from './pages/Rentals'
 import AgentSearchPage from './pages/AgentSearchPage'
-import ChatWidget from './components/ChatWidget';
+import ChatWidget from './components/ChatWidget'
 import SellRentForm from './pages/SellRentForm'
+
 
 
 
