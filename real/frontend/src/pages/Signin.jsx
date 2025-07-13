@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import signimg from '../images/signimg.png';
-import '../styles/signup.css';
+import '../styles/Signup.css';
 import 'animate.css';
 
 const Signin = () => {
