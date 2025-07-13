@@ -23,7 +23,7 @@ const AgentSearchPage = () => {
     const fetchAllAgents = async () => {
       setLoading(true);
       try {
-        const res = await fetch('http://localhost:4000/agents');
+        const res = await fetch('https://real-estate-webiste-fullstack.onrender.com/agents');
         if (!res.ok) throw new Error('Failed to fetch all agents');
         const data = await res.json();
         setAgents(data);
@@ -44,7 +44,7 @@ const AgentSearchPage = () => {
     const fetchAgents = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`http://localhost:4000/agents/search?search=${search}`);
+        const res = await fetch(`https://real-estate-webiste-fullstack.onrender.com/agents/search?search=${search}`);
         if (!res.ok) throw new Error('Failed to fetch agents');
         const data = await res.json();
         setAgents(data);
