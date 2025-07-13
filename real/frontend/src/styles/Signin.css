@@ -1,0 +1,177 @@
+.signpage {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.signin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40vw;
+  height: 100vh;
+  padding: 50px;
+  margin-left: 20px;
+  background-color: #f9f9f9;
+  animation: fadeInLeft 1s;
+}
+
+.signinhead {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.signinhead img {
+  width: 100px;
+  height: auto;
+}
+
+.signinput {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.signinput1 {
+  height: 45px;
+  width: 100%;
+  padding: 0 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.signinputbtn {
+  height: 45px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  background-color: #161eff;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.signinputbtn:hover {
+  background-color: #0b0ddc;
+}
+
+.signinput p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.signinput a {
+  color: #006aff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signinput-social {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.signinput-social button {
+  height: 45px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.signinput-social button:hover {
+  background: #f0f0f0;
+}
+
+.signimg {
+  width: 60vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.signimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========== Tablet ========== */
+@media (max-width: 1024px) {
+  .signin {
+    width: 50vw;
+    padding: 40px;
+  }
+
+  .signimg {
+    width: 50vw;
+  }
+}
+
+/* ========== Mobile ========== */
+@media (max-width: 768px) {
+  .signpage {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .signin {
+    width: 100vw;
+    height: auto;
+    padding: 30px 20px;
+    margin-left: 0;
+  }
+
+  .signimg {
+    display: none;
+  }
+
+  .signinput1,
+  .signinputbtn,
+  .signinput-social button {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .signinhead h2 {
+    font-size: 24px;
+  }
+}
+
+/* ========== Extra Small Screens ========== */
+@media (max-width: 480px) {
+  .signin {
+    padding: 20px 15px;
+  }
+
+  .signinput1 {
+    font-size: 14px;
+    height: 40px;
+  }
+
+  .signinputbtn {
+    font-size: 14px;
+    height: 40px;
+  }
+
+  .signinput-social button {
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .signinhead img {
+    width: 80px;
+  }
+}

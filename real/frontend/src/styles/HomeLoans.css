@@ -1,0 +1,129 @@
+/* HomeLoans.css */
+
+.home-loans {
+  background-color: #fff;
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.badge {
+  background-color: #e5e7eb;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+  display: inline-block;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.headline {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.description {
+  margin-bottom: 1rem;
+}
+
+.cta-button {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.cta-button:hover {
+  background-color: #1d4ed8;
+}
+
+.dashboard-link {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.dashboard-link a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.qa-banner {
+  background-color: #f3f4f6;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+}
+
+.qa-banner a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.features {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.feature img {
+  margin-bottom: 1rem;
+  max-height: 80px;
+}
+
+.feature h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.feature p {
+  font-size: 0.875rem;
+  color: #4b5563;
+}

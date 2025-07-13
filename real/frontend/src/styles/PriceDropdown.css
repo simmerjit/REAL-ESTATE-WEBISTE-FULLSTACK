@@ -1,0 +1,50 @@
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button {
+  padding: 8px 16px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;  /* Important for z-index to work */
+  top: 100%;
+  left: 0;
+  width: 200px;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 6px;
+  z-index: 9999; /* Make sure this is higher than the map */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+.price-inputs {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.price-inputs input {
+  width: 45%;
+  padding: 6px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+.apply-btn {
+  width: 100%;
+  padding: 8px;
+  background-color: #006aff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

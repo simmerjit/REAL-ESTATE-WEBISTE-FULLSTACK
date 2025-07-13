@@ -1,0 +1,544 @@
+/* Sell Page Styling - Zillow Style */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sell-home-wrapper {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+
+/* HERO SECTION */
+.hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-size: 1.125rem;
+  color: #666;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.cta-button {
+  background-color: #0061df;
+  color: white;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.125rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0052cc;
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* PARTNER AGENT SECTION */
+.partner-agent {
+  background-color: #0f766e;
+  color: white;
+  padding: 80px 24px;
+}
+
+.partner-agent-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.partner-agent h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 48px;
+  line-height: 1.2;
+}
+
+.partner-agent .green-highlight {
+  color: #84cc16;
+}
+
+.agent-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.agent-card {
+  background-color: white;
+  color: #1a1a1a;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.agent-card img {
+  height: 128px;
+  width: auto;
+  margin-bottom: 24px;
+}
+
+.agent-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1a1a1a;
+}
+
+.agent-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.agent-card a {
+  color: #7c3aed;
+  text-decoration: underline;
+}
+
+.agent-card a:hover {
+  color: #6d28d9;
+}
+
+.partner-note {
+  color: #cbd5e1;
+  font-size: 1rem;
+  margin-bottom: 32px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.cta-button-secondary {
+  background-color: white;
+  color: #0061df;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button-secondary:hover {
+  background-color: #f1f5f9;
+}
+
+/* SELLING OPTIONS SECTION */
+.selling-options {
+  background-color: #f8fafc;
+  padding: 80px 24px;
+}
+
+.selling-options-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.selling-options-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.selling-options h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.selling-options-header p {
+  font-size: 1.125rem;
+  color: #666;
+}
+
+.option-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.option-card {
+  background-color: #1e3a8a;
+  color: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  display: flex;
+  min-height: 300px;
+}
+
+.option-card.reverse {
+  flex-direction: row-reverse;
+}
+
+.option-text {
+  flex: 1;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.option-text h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.option-text .highlight {
+  color: #84cc16;
+}
+
+.option-text ul {
+  list-style: none;
+  margin-bottom: 32px;
+}
+
+.option-text li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 1.125rem;
+}
+
+.option-text li .checkmark {
+  color: #84cc16;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.option-text button {
+  background-color: white;
+  color: #1e3a8a;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.3s ease;
+}
+
+.option-text button:hover {
+  background-color: #f1f5f9;
+}
+
+.option-image {
+  flex: 1;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+}
+
+.option-image.cash {
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+}
+
+.option-image.agent {
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+}
+
+.option-image.yourself {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.option-image .icon {
+  opacity: 0.3;
+}
+
+/* RESOURCES SECTION */
+.resources {
+  background-color: white;
+  padding: 80px 24px;
+}
+
+.resources-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.resources-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.resources h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.resources-header p {
+  font-size: 1.125rem;
+  color: #666;
+}
+
+.resource-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.resource-card {
+  background-color: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.resource-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.resource-text {
+  padding: 20px;
+}
+
+.resource-text .read-time {
+  display: inline-block;
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.resource-text h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.resource-text a {
+  color: #0061df;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.resource-text a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  
+  .partner-agent h2,
+  .selling-options h2,
+  .resources h2 {
+    font-size: 2.5rem;
+  }
+  
+  .resource-cards {
+    max-width: 800px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 16px;
+  }
+  
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  
+  .partner-agent,
+  .selling-options,
+  .resources {
+    padding: 60px 16px;
+  }
+  
+  .partner-agent h2,
+  .selling-options h2,
+  .resources h2 {
+    font-size: 2rem;
+  }
+  
+  .agent-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .option-card,
+  .option-card.reverse {
+    flex-direction: column;
+  }
+  
+  .option-text {
+    padding: 32px 24px;
+  }
+  
+  .option-text h3 {
+    font-size: 1.5rem;
+  }
+  
+  .option-image {
+    min-height: 200px;
+  }
+  
+  .resource-cards {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+  
+  .resource-card img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.75rem;
+  }
+  
+  .partner-agent h2,
+  .selling-options h2,
+  .resources h2 {
+    font-size: 1.75rem;
+  }
+  
+  .option-text h3 {
+    font-size: 1.25rem;
+  }
+  
+  .option-text {
+    padding: 24px;
+  }
+  
+  .resource-text {
+    padding: 16px;
+  }
+  
+  .resource-text h4 {
+    font-size: 1rem;
+  }
+}
+/* For screens between 768px and 1024px (medium devices) */
+@media (max-width: 992px) {
+  .hero,
+  .partner-agent,
+  .selling-options,
+  .resources {
+    padding: 48px 16px;
+  }
+
+  .option-card,
+  .option-card.reverse {
+    flex-direction: column;
+  }
+
+  .option-image {
+    font-size: 3rem;
+  }
+
+  .agent-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .resource-cards {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+/* Better readability and layout for smaller mobiles */
+@media (max-width: 380px) {
+  .cta-button,
+  .cta-button-secondary,
+  .option-text button {
+    font-size: 0.9rem;
+    padding: 12px 20px;
+  }
+
+  .hero-text h1,
+  .partner-agent h2,
+  .selling-options h2,
+  .resources h2 {
+    font-size: 1.5rem;
+  }
+
+  .option-text h3 {
+    font-size: 1.1rem;
+  }
+
+  .option-text li {
+    font-size: 1rem;
+  }
+
+  .resource-text h4 {
+    font-size: 0.95rem;
+  }
+}

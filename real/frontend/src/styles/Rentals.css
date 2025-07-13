@@ -1,0 +1,307 @@
+/* Scope all Rentals styles with .rentals-page */
+
+.rentals-page body,
+.rentals-page html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: #fff;
+  color: #111;
+}
+
+.rentals-page .app {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.rentals-page .hero {
+  display: flex;
+  flex-wrap: wrap;
+  background: #f5f8fa;
+  padding: 3rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.rentals-page .hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.rentals-page .hero-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.rentals-page .hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.rentals-page .hero-buttons button {
+  margin-right: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background-color: #006aff;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.rentals-page .hero-buttons .outline {
+  background: transparent;
+  border: 2px solid #006aff;
+  color: #006aff;
+}
+
+.rentals-page .hero-buttons button:hover {
+  background-color: #0050cc;
+}
+
+.rentals-page .hero-img {
+  max-width: 400px;
+  flex: 1;
+  width: 100%;
+}
+
+/* Section Common */
+.rentals-page section {
+  padding: 3rem 2rem;
+}
+
+/* Rent Like a Pro Section */
+.rentals-page .rent-pro {
+  background-color: #002f6c;
+  color: white;
+  text-align: center;
+}
+
+.rentals-page .rent-pro h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.rentals-page .rent-pro p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #dbe4f0;
+}
+
+/* Cards */
+.rentals-page .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.rentals-page .card {
+  background: white;
+  color: #000;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 260px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.rentals-page .card:hover {
+  transform: translateY(-5px);
+}
+
+.rentals-page .card img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+}
+
+.rentals-page .card h4,
+.rentals-page .card h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.rentals-page .card p {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.rentals-page .card a {
+  color: #006aff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.rentals-page .card a:hover {
+  text-decoration: underline;
+}
+
+/* Guesswork Section */
+.rentals-page .guesswork {
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.rentals-page .guesswork img {
+  max-width: 100%;
+  margin: 1.5rem auto;
+}
+
+.rentals-page .guesswork button {
+  margin-top: 1rem;
+}
+
+/* Testimonials */
+.rentals-page .testimonials {
+  background: #f2f2f2;
+  text-align: center;
+  font-style: italic;
+}
+
+.rentals-page .testimonials h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Premium Section */
+.rentals-page .premium {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  background-color: #f2f2f2;
+}
+
+.rentals-page .premium img {
+  width: 100%;
+  max-width: 500px;
+  flex: 1;
+}
+
+.rentals-page .premium div {
+  flex: 1;
+  padding: 1rem;
+}
+
+.rentals-page .premium h4 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.rentals-page .premium ul {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.rentals-page .premium button {
+  margin-top: 1rem;
+}
+
+/* Confidence Section */
+.rentals-page .confidence {
+  background-color: #fff;
+  text-align: center;
+}
+
+.rentals-page .confidence h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.rentals-page .confidence p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* App Download */
+.rentals-page .app-download {
+  background: #002f6c;
+  color: white;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.rentals-page .app-download img {
+  max-width: 300px;
+  margin-bottom: 1.5rem;
+}
+
+/* Resources */
+.rentals-page .resources {
+  background-color: #f8f9fb;
+  text-align: center;
+}
+
+.rentals-page .resources h4 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+.rentals-page button {
+  background-color: #006aff;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.rentals-page button:hover {
+  background-color: #0050cc;
+}
+
+.rentals-page .signin-link {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.rentals-page .signin-link a {
+  color: #006aff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.rentals-page .signin-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .rentals-page .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .rentals-page .premium {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .rentals-page .premium img {
+    max-width: 100%;
+  }
+
+  .rentals-page .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rentals-page .card {
+    width: 90%;
+    height: auto;
+  }
+}

@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  width: 100%;
+  height: 90px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid grey;
+  padding: 0 40px;
+  position: relative;
+  z-index: 100;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* Left nav items */
+.nav-left {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-item {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+.nav-item li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Right nav (e.g., login, signup, etc.) */
+.nav-right {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-right li {
+  list-style: none;
+}
+
+/* ========= Responsive Design ========= */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 20px;
+  }
+
+  .nav-left,
+  .nav-right {
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    margin: 0;
+  }
+
+  .nav-item {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .nav-item li {
+    width: 100%;
+  }
+
+  .nav-item li a {
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+/* Optional: hamburger menu for very small screens */
+@media (max-width: 500px) {
+  .navbar {
+    padding: 16px;
+  }
+
+  .nav-logo img {
+    width: 120px;
+  }
+
+  .nav-item li a {
+    font-size: 15px;
+  }
+}

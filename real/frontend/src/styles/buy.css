@@ -1,0 +1,164 @@
+/* buy.css */
+
+.search-page {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 60px); /* adjust based on header height */
+}
+
+/* Map Container */
+.map-container {
+  z-index: 1;
+  position: relative;
+}
+
+/* Grid */
+.properties-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 1rem;
+  overflow-y: auto;
+  height: 100%;
+}
+
+/* Cards */
+.property-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  height: 280px;
+  padding: 1rem;
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+.property-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image */
+.property-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Details */
+.property-details {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.5rem;
+  color: #333;
+  overflow: hidden;
+}
+
+.property-details h2 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.property-details p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Navigation & Search */
+.search-nav {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid black;
+  padding: 0.5rem;
+  z-index: 10000;
+  position: sticky;
+  top: 0;
+}
+
+.search-bar input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 250px;
+  max-width: 100%;
+}
+
+.search-bar button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .search-page {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .map-container {
+    display: none !important; /* ✅ Hide the map */
+  }
+
+  .properties-grid {
+    width: 100%;
+    grid-template-columns: 1fr; /* One column */
+    padding: 1rem;
+    gap: 12px;
+  }
+
+  .property-card {
+    height: auto;
+    padding: 0.75rem;
+  }
+
+  .property-image img {
+    height: 160px;
+  }
+
+  .property-details h2 {
+    font-size: 1rem;
+  }
+
+  .property-details p {
+    font-size: 0.85rem;
+  }
+
+  .filters {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .search-bar input {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .search-bar,
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+}

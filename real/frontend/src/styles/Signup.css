@@ -1,0 +1,190 @@
+.signpage {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  flex-direction: row;
+}
+
+.signin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40vw;
+  height: 100vh;
+  padding: 50px;
+  margin-left: 20px;
+  animation: fadeInLeft 1s;
+}
+
+.signinhead {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.signinhead img {
+  width: 100px;
+  height: 30px;
+}
+
+.signinput {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.signinput1 {
+  height: 45px;
+  width: 92%;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.signinputbtn {
+  height: 45px;
+  width: 92%;
+  border-radius: 10px;
+  border: none;
+  background-color: #0045ff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.signinputbtn:hover {
+  background-color: #002db3;
+}
+
+.signinput p {
+  font-size: 14px;
+}
+.signinput a {
+  color: #0045ff;
+  text-decoration: none;
+}
+
+.signimg {
+  width: 60vw;
+  height: 100%;
+}
+.signimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Social signup buttons */
+.signinput .social-btn {
+  height: 45px;
+  width: 92%;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.google-btn {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #444;
+}
+.google-btn:hover {
+  background-color: #f1f1f1;
+}
+
+.facebook-btn {
+  background-color: #1877f2;
+  color: white;
+}
+.facebook-btn:hover {
+  background-color: #155fc1;
+}
+
+.apple-btn {
+  background-color: #000;
+  color: white;
+}
+.apple-btn:hover {
+  background-color: #333;
+}
+
+/* ===============================
+   Responsive Design - Tablet & Mobile
+   =============================== */
+
+@media (max-width: 1024px) {
+  .signin {
+    width: 50vw;
+    padding: 30px;
+  }
+
+  .signinput1,
+  .signinputbtn,
+  .social-btn {
+    width: 100%;
+  }
+
+  .signimg {
+    width: 50vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .signpage {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .signin {
+    width: 100%;
+    height: auto;
+    padding: 30px 20px;
+    margin: 0;
+  }
+
+  .signimg {
+    width: 100%;
+    height: 300px;
+  }
+
+  .signimg img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .signinput1,
+  .signinputbtn,
+  .social-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .signin {
+    padding: 20px 15px;
+  }
+
+  .signinhead h2 {
+    font-size: 24px;
+  }
+
+  .signinput1 {
+    font-size: 14px;
+  }
+
+  .social-btn {
+    font-size: 14px;
+    height: 40px;
+  }
+}
