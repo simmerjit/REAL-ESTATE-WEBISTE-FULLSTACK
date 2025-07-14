@@ -17,22 +17,24 @@ const Signup = () => {
   }, []);
 
   const handleregister = async () => {
-    try {
-      const response = await fetch('https://real-estate-website-fullstack.onrender.com/api/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      });
-      const data = await response.json();
-      console.log(data);
+  try {
+    const response = await fetch('https://real-estate-website-fullstack.onrender.com/api/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password }),
+    });
 
-      localStorage.setItem("user", JSON.stringify({ email }));
-      navigate("/");
-    } catch (error) {
-      console.error('❌ Registration error:', error);
-      alert("Registration failed. Please try again.");
-    }
-  };
+    const data = await response.json();
+    console.log(data);
+
+    localStorage.setItem("user", JSON.stringify({ email }));
+    navigate("/");
+  } catch (error) {
+    console.error('❌ Registration error:', error);
+    alert("Registration failed. Please try again.");
+  }
+};
+
 
   return (
     <div className='signpage animate__animated animate__fadeIn'>
