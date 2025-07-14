@@ -50,15 +50,6 @@ app.post("/api/chat", async (req, res) => {
   }
 
   try {
-    const apiKey = process.env.OPENROUTER_API_KEY || "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";
-
-    if (!apiKey) {
-      console.error("❌ No API key found.");
-      return res.status(500).json({ error: "API key not configured" });
-    }
-
-    console.log("🔐 Using API Key:", apiKey.slice(0, 10) + "...");
-
     const openRouterRes = await axios.post(
       "https://openrouter.ai/api/v1/chat/completions",
       {
@@ -77,13 +68,13 @@ app.post("/api/chat", async (req, res) => {
       },
       {
         headers: {
-          Authorization: `Bearer ${apiKey}`,
+          Authorization: `Bearer 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`,
           "Content-Type": "application/json",
         },
       }
     );
 
-    const reply = openRouterRes.data.choices[0]?.message?.content;
+    const reply = openRouterRes.data.choices?.[0]?.message?.content;
 
     if (!reply) {
       return res.status(500).json({ error: "No reply from assistant" });
@@ -95,6 +86,7 @@ app.post("/api/chat", async (req, res) => {
     res.status(500).json({ error: "Chat failed. Try again." });
   }
 });
+
 
 
 
