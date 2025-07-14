@@ -367,6 +367,7 @@ app.post('/rent/upload', async (req, res) => {
 
 app.post("/api/chat", async (req, res) => {
   const { message } = req.body;
+console.log("🔑 OPENROUTER_API_KEY value:", process.env.OPENROUTER_API_KEY);
 
   if (!message || message.trim().length === 0) {
     return res.status(400).json({ error: "Message is required" });
@@ -406,6 +407,8 @@ app.post("/api/chat", async (req, res) => {
 
     res.json({ response: reply.trim() });
   } catch (err) {
+    console.log("🔑 OPENROUTER_API_KEY value:", process.env.OPENROUTER_API_KEY);
+
     console.error("❌ Chat error:", {
       message: err.message,
       status: err.response?.status,
