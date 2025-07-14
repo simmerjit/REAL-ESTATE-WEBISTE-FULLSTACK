@@ -89,9 +89,16 @@ console.log("🔐 Using API Key:", "sk-or-v1-d70...***");
 
     res.json({ response: reply.trim() });
   } catch (err) {
-    console.error("❌ Chat error:", err.response?.data || err.message || err);
-    res.status(500).json({ error: "Chat failed. Try again." });
-  }
+  console.error("❌ Chat error:", {
+    message: err.message,
+    responseData: err.response?.data,
+    status: err.response?.status,
+    headers: err.response?.headers,
+    config: err.config,
+  });
+  res.status(500).json({ error: "Chat failed. Try again." });
+}
+
 });
 
 
