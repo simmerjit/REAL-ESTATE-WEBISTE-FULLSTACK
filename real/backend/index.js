@@ -54,12 +54,11 @@ app.post("/api/chat", async (req, res) => {
       "https://openrouter.ai/api/v1/chat/completions",
       {
         model: "mistralai/mistral-7b-instruct",
-        max_tokens: 60,
+        max_tokens: 60, // 🔹 Limit response length
         messages: [
           {
             role: "system",
-            content:
-              "You are a helpful real estate assistant. Reply briefly and clearly in 1–2 lines (under 40 words).",
+            content: "You are a helpful real estate assistant. Reply briefly and clearly in 1–2 lines (under 40 words).",
           },
           {
             role: "user",
@@ -69,10 +68,7 @@ app.post("/api/chat", async (req, res) => {
       },
       {
         headers: {
-          Authorization: `Bearer ${
-            process.env.OPENROUTER_API_KEY ||
-            "sk-or-d70f65b8b6010588eea9b9fff91c376eb7dbc47726208e1617b61806183c09574"
-          }`,
+          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
           "Content-Type": "application/json",
         },
       }
@@ -86,11 +82,11 @@ app.post("/api/chat", async (req, res) => {
 
     res.json({ response: reply.trim() });
   } catch (err) {
-    console.error("❌ Chat error:", err.response?.data || err.message);
-    res.status(500).json({ error: "Chat failed. Try again." });
-  }
-});
+  console.error("❌ Chat error:", err.response?.data || err.message || err);
+  res.status(500).json({ error: "Chat failed. Try again." });
+}
 
+});
 
 
 
