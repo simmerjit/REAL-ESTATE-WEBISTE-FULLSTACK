@@ -50,11 +50,20 @@ app.post("/api/chat", async (req, res) => {
   }
 
   try {
+    const apiKey = process.env.OPENROUTER_API_KEY || "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";
+
+    if (!apiKey) {
+      console.error("❌ No API key found.");
+      return res.status(500).json({ error: "API key not configured" });
+    }
+
+    console.log("🔐 Using API Key:", apiKey.slice(0, 10) + "...");
+
     const openRouterRes = await axios.post(
       "https://openrouter.ai/api/v1/chat/completions",
       {
         model: "mistralai/mistral-7b-instruct",
-        max_tokens: 60, // 🔹 Limit response length
+        max_tokens: 60,
         messages: [
           {
             role: "system",
@@ -68,7 +77,7 @@ app.post("/api/chat", async (req, res) => {
       },
       {
         headers: {
-          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+          Authorization: `Bearer ${apiKey}`,
           "Content-Type": "application/json",
         },
       }
@@ -82,10 +91,9 @@ app.post("/api/chat", async (req, res) => {
 
     res.json({ response: reply.trim() });
   } catch (err) {
-  console.error("❌ Chat error:", err.response?.data || err.message || err);
-  res.status(500).json({ error: "Chat failed. Try again." });
-}
-
+    console.error("❌ Chat error:", err.response?.data || err.message || err);
+    res.status(500).json({ error: "Chat failed. Try again." });
+  }
 });
 
 
