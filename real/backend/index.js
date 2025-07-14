@@ -385,7 +385,7 @@ app.post("/api/chat", async (req, res) => {
       },
       {
         headers: {
-          Authorization: `Bearer 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`,
+          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
           "Content-Type": "application/json"
         }
       }
@@ -400,6 +400,7 @@ app.post("/api/chat", async (req, res) => {
     res.status(500).json({ error: "Chat failed", details: err.message });
   }
 });
+
 
 
 
