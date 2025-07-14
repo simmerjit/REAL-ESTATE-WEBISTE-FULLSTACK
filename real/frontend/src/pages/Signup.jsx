@@ -18,7 +18,7 @@ const Signup = () => {
 
 const handleregister = async () => {
   try {
-    const response = await fetch('https://real-estate-website-fullstack.onrender.com/api/register', {
+    const response = await fetch('https://real-estate-webiste-fullstack.onrender.com/api/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
