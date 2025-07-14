@@ -16,7 +16,7 @@ const Signup = () => {
     }
   }, []);
 
-  const handleregister = async () => {
+const handleregister = async () => {
   try {
     const response = await fetch('https://real-estate-website-fullstack.onrender.com/api/register', {
       method: 'POST',
@@ -25,8 +25,14 @@ const Signup = () => {
     });
 
     const data = await response.json();
-    console.log(data);
 
+    if (!response.ok) {
+      // Show error from backend if registration failed
+      alert(data.error || "Registration failed. Please try again.");
+      return;
+    }
+
+    // ✅ Registration succeeded
     localStorage.setItem("user", JSON.stringify({ email }));
     navigate("/");
   } catch (error) {
