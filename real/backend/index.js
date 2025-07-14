@@ -44,7 +44,6 @@ connectDB();
 
 app.post("/api/chat", async (req, res) => {
   const { message } = req.body;
-console.log("🔑 API Key Loaded:", process.env.OPENROUTER_API_KEY);
 
   if (!message || message.trim().length === 0) {
     return res.status(400).json({ error: "Message is required" });
@@ -55,11 +54,12 @@ console.log("🔑 API Key Loaded:", process.env.OPENROUTER_API_KEY);
       "https://openrouter.ai/api/v1/chat/completions",
       {
         model: "mistralai/mistral-7b-instruct",
-        max_tokens: 60, // 🔹 Limit response length
+        max_tokens: 60,
         messages: [
           {
             role: "system",
-            content: "You are a helpful real estate assistant. Reply briefly and clearly in 1–2 lines (under 40 words).",
+            content:
+              "You are a helpful real estate assistant. Reply briefly and clearly in 1–2 lines (under 40 words).",
           },
           {
             role: "user",
@@ -69,8 +69,10 @@ console.log("🔑 API Key Loaded:", process.env.OPENROUTER_API_KEY);
       },
       {
         headers: {
-          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY || "sk-or-<your-real-key>"}`,
-
+          Authorization: `Bearer ${
+            process.env.OPENROUTER_API_KEY ||
+            "sk-or-d70f65b8b6010588eea9b9fff91c376eb7dbc47726208e1617b61806183c09574"
+          }`,
           "Content-Type": "application/json",
         },
       }
