@@ -369,52 +369,35 @@ app.post('/rent/upload', async (req, res) => {
 
 app.post("/api/chat", async (req, res) => {
   const { message } = req.body;
-  console.log("📩 User message:", message);
+  console.log("Received:", message);
 
-  if (!message || message.trim().length === 0) {
-    return res.status(400).json({ error: "Message is required" });
-  }
+  if (!message) return res.status(400).json({ error: "Message required" });
 
   try {
     const response = await axios.post(
       "https://openrouter.ai/api/v1/chat/completions",
       {
         model: "mistralai/mistral-7b-instruct",
-        max_tokens: 60,
         messages: [
-          {
-            role: "system",
-            content:
-              "You are a helpful real estate assistant. Reply briefly and clearly in 1–2 lines (under 40 words).",
-          },
-          {
-            role: "user",
-            content: message,
-          },
-        ],
+          { role: "system", content: "You are a helpful real estate assistant." },
+          { role: "user", content: message }
+        ]
       },
       {
         headers: {
-          Authorization: `Bearer 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`,
-          "Content-Type": "application/json",
-        },
+          Authorization: `Bearer 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`,
+          "Content-Type": "application/json"
+        }
       }
     );
 
-    const reply = response.data.choices?.[0]?.message?.content;
+    const reply = response.data.choices[0]?.message?.content;
+    if (!reply) return res.status(500).json({ error: "No reply from assistant" });
 
-    if (!reply) {
-      return res.status(500).json({ error: "No reply from assistant" });
-    }
-
-    res.json({ response: reply.trim() });
+    res.json({ response: reply });
   } catch (err) {
-    console.error("❌ Chat error:", {
-      message: err.message,
-      status: err.response?.status,
-      data: err.response?.data,
-    });
-    res.status(500).json({ error: "Chat failed. Try again." });
+    console.error("Error:", err.response?.data || err.message);
+    res.status(500).json({ error: "Chat failed", details: err.message });
   }
 });
 
