@@ -195,7 +195,7 @@ const verifyToken = (req, res, next) => {
   });
 };
 
-app.post("/register" , async (req,res)=>{   
+app.post("/api/register" , async (req,res)=>{   
   try {
     const existingUser = await User.findOne({email: req.body.email});
     if (existingUser) {
