@@ -15,9 +15,12 @@ import Agents from "./db/agent.js";
 import connectDB from "./db/config.js";
 import nodemailer from "nodemailer"; // ✅ Add nodemailer import
 // import chatRoute from "./routes/chat.js";
-
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
+
+
 const port = process.env.PORT || 4000;
 // ✅ MIDDLEWARE FIRST
 const allowedOrigins = [
