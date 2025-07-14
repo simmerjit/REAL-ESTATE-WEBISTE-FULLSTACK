@@ -44,6 +44,7 @@ connectDB();
 
 app.post("/api/chat", async (req, res) => {
   const { message } = req.body;
+console.log("🔑 API Key Loaded:", process.env.OPENROUTER_API_KEY);
 
   if (!message || message.trim().length === 0) {
     return res.status(400).json({ error: "Message is required" });
@@ -68,7 +69,8 @@ app.post("/api/chat", async (req, res) => {
       },
       {
         headers: {
-          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY || "sk-or-<your-real-key>"}`,
+
           "Content-Type": "application/json",
         },
       }
