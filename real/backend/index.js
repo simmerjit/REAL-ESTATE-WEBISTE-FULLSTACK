@@ -22,7 +22,8 @@ const port = process.env.PORT || 4000;
 // ✅ MIDDLEWARE FIRST
 const allowedOrigins = [
   "https://real-estate-webiste-fullstack.vercel.app",
-  "https://real-estate-webiste-fullstack-oa69ktcbp-simmerjits-projects.vercel.app", // ✅ Add this
+  "https://real-estate-webiste-fullstack-oa69ktcbp-simmerjits-projects.vercel.app",
+  "https://real-estate-webiste-fullstack-f30knes83-simmerjits-projects.vercel.app", // ← ADD THIS
   "http://localhost:5173"
 ];
 
@@ -46,6 +47,9 @@ connectDB();
 
 app.post("/api/chat", async (req, res) => {
   const { message } = req.body;
+console.log("🔐 Using API Key:", "sk-or-v1-d70...***");
+  console.log("🤖 API response:", openRouterRes.data);
+
 
   if (!message || message.trim().length === 0) {
     return res.status(400).json({ error: "Message is required" });
