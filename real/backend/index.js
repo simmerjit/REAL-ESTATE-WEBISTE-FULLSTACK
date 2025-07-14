@@ -367,7 +367,7 @@ app.post('/rent/upload', async (req, res) => {
 
 app.post("/api/chat", async (req, res) => {
   const { message } = req.body;
-console.log("🔑 OPENROUTER_API_KEY value:", process.env.OPENROUTER_API_KEY);
+  console.log("📩 User message:", message);
 
   if (!message || message.trim().length === 0) {
     return res.status(400).json({ error: "Message is required" });
@@ -393,7 +393,7 @@ console.log("🔑 OPENROUTER_API_KEY value:", process.env.OPENROUTER_API_KEY);
       },
       {
         headers: {
-          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+          Authorization: `Bearer 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`,
           "Content-Type": "application/json",
         },
       }
@@ -407,8 +407,6 @@ console.log("🔑 OPENROUTER_API_KEY value:", process.env.OPENROUTER_API_KEY);
 
     res.json({ response: reply.trim() });
   } catch (err) {
-    console.log("🔑 OPENROUTER_API_KEY value:", process.env.OPENROUTER_API_KEY);
-
     console.error("❌ Chat error:", {
       message: err.message,
       status: err.response?.status,
@@ -417,6 +415,7 @@ console.log("🔑 OPENROUTER_API_KEY value:", process.env.OPENROUTER_API_KEY);
     res.status(500).json({ error: "Chat failed. Try again." });
   }
 });
+
 
 
 app.listen(port, () => {
