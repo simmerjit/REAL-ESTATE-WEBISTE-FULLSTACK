@@ -172,27 +172,29 @@ const verifyToken = (req, res, next) => {
 
 
 // your /api/register route
-app.post('/api/register', async (req, res) => {
+app.post("/api/register", async (req, res) => {
   try {
-    const existingUser = await User.findOne({ email: req.body.email });
-    if (existingUser) {
-      return res.status(400).json({ error: 'email already exists' });
+    const { email, password } = req.body;
+    if (!email || !password) {
+      return res.status(400).json({ error: "Email and password are required" });
     }
 
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    const user = new User({
-      email: req.body.email,
-      password: hashedPassword
-    });
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ error: "User already exists" });
+    }
 
-    let result = await user.save();
-    result = result.toObject();
-    delete result.password;
-    res.send(result);
-  } catch (error) {
-    res.status(500).json({ error: 'Internal server error' });
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const user = new User({ email, password: hashedPassword });
+    await user.save();
+
+    res.status(201).json({ message: "User registered successfully!" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Registration failed" });
   }
 });
+
 
 
 app.post("/login", async (req, res)=>{
