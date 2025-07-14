@@ -45,61 +45,48 @@ connectDB();
 
 
 
-app.post("/api/chat", async (req, res) => {
-  const { message } = req.body;
-console.log("🔐 Using API Key:", "sk-or-v1-d70...***");
-  console.log("🤖 API response:", openRouterRes.data);
+try {
+  const response = await axios.post(
+    "https://openrouter.ai/api/v1/chat/completions",
+    {
+      model: "mistralai/mistral-7b-instruct",
+      max_tokens: 60,
+      messages: [
+        {
+          role: "system",
+          content: "You are a helpful real estate assistant. Reply briefly and clearly in 1–2 lines (under 40 words).",
+        },
+        {
+          role: "user",
+          content: message,
+        },
+      ],
+    },
+    {
+      headers: {
+        Authorization: `Bearer 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`,
+        "Content-Type": "application/json",
+      },
+    }
+  );
 
+  const reply = response.data.choices?.[0]?.message?.content;
 
-  if (!message || message.trim().length === 0) {
-    return res.status(400).json({ error: "Message is required" });
+  if (!reply) {
+    return res.status(500).json({ error: "No reply from assistant" });
   }
 
-  try {
-    const openRouterRes = await axios.post(
-      "https://openrouter.ai/api/v1/chat/completions",
-      {
-        model: "mistralai/mistral-7b-instruct",
-        max_tokens: 60,
-        messages: [
-          {
-            role: "system",
-            content: "You are a helpful real estate assistant. Reply briefly and clearly in 1–2 lines (under 40 words).",
-          },
-          {
-            role: "user",
-            content: message,
-          },
-        ],
-      },
-      {
-        headers: {
-          Authorization: `Bearer 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`,
+  res.json({ response: reply.trim() });
 
-          "Content-Type": "application/json",
-        },
-      }
-    );
-
-    const reply = openRouterRes.data.choices?.[0]?.message?.content;
-
-    if (!reply) {
-      return res.status(500).json({ error: "No reply from assistant" });
-    }
-
-    res.json({ response: reply.trim() });
-  } catch (err) {
+} catch (err) {
   console.error("❌ Chat error:", {
     message: err.message,
-    responseData: err.response?.data,
     status: err.response?.status,
-    headers: err.response?.headers,
-    config: err.config,
+    data: err.response?.data,
+    stack: err.stack
   });
   res.status(500).json({ error: "Chat failed. Try again." });
 }
-
-});
 
 
 
