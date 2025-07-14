@@ -61,7 +61,8 @@ app.post("/api/chat", async (req, res) => {
         messages: [
           {
             role: "system",
-            content: "You are a helpful real estate assistant. Reply briefly and clearly in 1–2 lines (under 40 words).",
+            content:
+              "You are a helpful real estate assistant. Reply briefly and clearly in 1–2 lines (under 40 words).",
           },
           {
             role: "user",
@@ -84,13 +85,12 @@ app.post("/api/chat", async (req, res) => {
     }
 
     res.json({ response: reply.trim() });
-
   } catch (err) {
     console.error("❌ Chat error:", {
       message: err.message,
       status: err.response?.status,
       data: err.response?.data,
-      stack: err.stack
+      stack: err.stack,
     });
     res.status(500).json({ error: "Chat failed. Try again." });
   }
