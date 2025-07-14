@@ -20,7 +20,22 @@ import nodemailer from "nodemailer"; // ✅ Add nodemailer import
 const app = express();
 const port = process.env.PORT || 4000;
 // ✅ MIDDLEWARE FIRST
-app.use(cors());
+const allowedOrigins = [
+  "https://real-estate-webiste-fullstack.vercel.app",
+  "http://localhost:5173"
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      console.log("❌ CORS blocked origin:", origin);
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
+}));
 app.use(express.json());
 
 connectDB(); 
