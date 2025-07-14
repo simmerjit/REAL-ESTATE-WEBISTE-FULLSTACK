@@ -22,8 +22,10 @@ const port = process.env.PORT || 4000;
 // ✅ MIDDLEWARE FIRST
 const allowedOrigins = [
   "https://real-estate-webiste-fullstack.vercel.app",
+  "https://real-estate-webiste-fullstack-oa69ktcbp-simmerjits-projects.vercel.app", // ✅ Add this
   "http://localhost:5173"
 ];
+
 
 app.use(cors({
   origin: function (origin, callback) {
