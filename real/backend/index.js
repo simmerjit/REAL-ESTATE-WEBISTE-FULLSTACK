@@ -74,7 +74,8 @@ console.log("🔐 Using API Key:", "sk-or-v1-d70...***");
       },
       {
         headers: {
-          Authorization: `Bearer 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`,
+          Authorization: `Bearer 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`,
+
           "Content-Type": "application/json",
         },
       }
