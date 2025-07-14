@@ -170,25 +170,30 @@ const verifyToken = (req, res, next) => {
   });
 };
 
-app.post("/api/register" , async (req,res)=>{   
+
+// your /api/register route
+app.post('/api/register', async (req, res) => {
   try {
-    const existingUser = await User.findOne({email: req.body.email});
+    const existingUser = await User.findOne({ email: req.body.email });
     if (existingUser) {
-        return res.status(400).json({error:'email already exists'})
-    } 
+      return res.status(400).json({ error: 'email already exists' });
+    }
+
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
     const user = new User({
       email: req.body.email,
       password: hashedPassword
     });
+
     let result = await user.save();
     result = result.toObject();
-    delete result.password
-    res.send(result)
+    delete result.password;
+    res.send(result);
   } catch (error) {
-     res.status(500).json({ error: 'Internal server error' });
+    res.status(500).json({ error: 'Internal server error' });
   }
-})
+});
+
 
 app.post("/login", async (req, res)=>{
   try{
